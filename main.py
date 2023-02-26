@@ -19,31 +19,7 @@ r = sr.Recognizer() # initialise a recogniser
 
 
 
-# listen for audio and convert it to text:
-'''def record_audio(ask=False):
-    with sr.Microphone() as source: # microphone as source
-        if ask:
-            speak(ask)
-        audio = r.listen(source)  # listen for the audio via source
-        voice_data = ''
-        try:
-            voice_data = r.recognize_google(audio,language='th')  # convert audio to text
-        except sr.UnknownValueError: # error: recognizer does not understand
-            speak('ผมไม่เข้าใจ')
-        except sr.RequestError:
-            speak('ฉันทำไม่ได้') # error: recognizer is not connected
-        print(f">> {voice_data.lower()}") # print what user said
-        return voice_data.lower()'''
 
-# get string and make a audio file to be played
-'''def speak(audio_string):
-    tts = gTTS(text=audio_string, lang='th') # text to speech(voice)
-    r = random.randint(1,20000000)
-    audio_file = 'audio' + str(r) + '.mp3'
-    tts.save(audio_file) # save as mp3
-    playsound.playsound(audio_file) # play the audio file
-    print(f"kiri: {audio_string}") # print what app said
-    os.remove(audio_file) # remove audio file'''
 
 def get_audio():
     r = sr.Recognizer()
@@ -80,7 +56,7 @@ def respond(voice_data):
         speak(greet)
         
     if there_exists(['ชื่ออะไร','คุณเป็นใคร','คุณคือใคร']):
-        speak('สวัสดีครับ ผมชื่อจาร์วิสครับ ผมเป็นผู้ช่วยของอรรถครับผม')
+        speak('สวัสดีครับ ผมชื่อมาโนชครับ')
     
     #เปิดเพลงใน youtube
     if there_exists(['เปิดเพลง']):
